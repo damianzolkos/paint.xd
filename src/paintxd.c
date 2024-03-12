@@ -306,7 +306,7 @@ void RenderToolButton(int x, int y, Tool tool) {
             toolTexture = toolIcons[i].texture;
         }
     }
-    DrawTextureEx(toolTexture, (Vector2) { x = x + 4, y = y + 4}, 1, 1, WHITE);
+    DrawTextureEx(toolTexture, (Vector2) { x = x + 4, y = y + 4 }, 1, 1, WHITE);
     DrawRectangleLinesEx(toolButtonRect, 1, BUTTON_BORDER);
 }
 
@@ -433,6 +433,8 @@ int main() {
     for (size_t i = 0; i < TOOLS_COUNT; i++)
     {
         sprintf(filePath, "resources/tool%lu.png", i + 1);
+        printf(filePath);
+        printf("\n");
         Image image = LoadImage(filePath);
         Texture2D texture = LoadTextureFromImage(image);
         toolIcons[i] = (ToolIcon) { .texture = texture, .tool = (Tool)i };
